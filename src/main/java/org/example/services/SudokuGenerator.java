@@ -69,9 +69,7 @@ public class SudokuGenerator {
         }
     }
 
-    /**
-     * Verifica se é válido colocar um número em uma determinada célula.
-     */
+    // verifica se é válido colocar um número em uma célula.
     private boolean isValidPlacement(int row, int col, int num) {
         // Verifica a linha
         for (int c = 0; c < BOARD_SIZE; c++) {
@@ -80,14 +78,14 @@ public class SudokuGenerator {
             }
         }
 
-        // Verifica a coluna
+        // verifica a coluna
         for (int r = 0; r < BOARD_SIZE; r++) {
             if (board[r][col] == num) {
                 return false;
             }
         }
 
-        // Verifica o bloco 3x3
+        // verifica o bloco 3x3
         int boxStartRow = row - row % 3;
         int boxStartCol = col - col % 3;
         for (int r = 0; r < 3; r++) {
@@ -98,6 +96,6 @@ public class SudokuGenerator {
             }
         }
 
-        return true; // É uma jogada válida
+        return true; 
     }
 }
